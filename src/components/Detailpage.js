@@ -25,4 +25,4 @@ function mapStateToProps(reduxState) {
   return {};
 }
 
-export default connect(mapStateToProps)(DetailPage);
+export default connect(null)(DetailPage);
