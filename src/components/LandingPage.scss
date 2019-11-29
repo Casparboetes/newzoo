@@ -6,30 +6,27 @@
   .profile-gate-label {
     width: 100%;
     color: #fff;
-    font-size: 4vw;
+    font-size: 3.75vw;
   }
   ul > li {
     display: inline-block;
-    /* You can also add some margins here to make it look prettier */
     zoom: 0.5;
     list-style-type: none;
     margin: 0;
     padding: 0;
     color: #fff;
-    line-height: 1.2;
-    user-select: none;
-    cursor: default;
     font-size: 0.75vw;
     text-align: center;
-    -webkit-box-direction: normal;
-    padding: 0;
-    margin: 0 1rem;
+    cursor: default;
   }
   .choose-interest {
     .nav-link {
       .profile-image {
         width: 65%;
         height: auto;
+      }
+      .pc {
+        width: 60%;
       }
     }
 

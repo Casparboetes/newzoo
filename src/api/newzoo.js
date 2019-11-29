@@ -1,5 +1,5 @@
 function api(endpoint, { method, body, jwt } = {}) {
-  return fetch(endpoint, {
+  return fetch("https://api.newzoo.com/v1.0/" + endpoint, {
     method: method,
     headers: {
       Authorization: `Bearer ${jwt}`
@@ -12,7 +12,8 @@ function api(endpoint, { method, body, jwt } = {}) {
         // throw { api_error: data };
         console.log("Oopsie, error");
       } else {
-        return data.data;
+        console.log("data in call itself", data);
+        return data;
       }
     });
 }

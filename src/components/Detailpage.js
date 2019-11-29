@@ -1,28 +1,36 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { fetchOneGame } from "../store/detailpage/actions";
 
 class DetailPage extends Component {
   componentDidMount() {
-    const post_id = this.props;
-    console.log(this.props.match.params.id);
-
-    console.log("Now let's fetch this post:", post_id);
+    const title = this.props.match.params.id;
+    this.props.fetchOneGame(title);
   }
 
   render() {
-    const title = "Detailpage";
+    const loading = !this.props.games;
+    const header = "Detailpage";
 
     return (
       <div>
-        <h1>{title}</h1>
-        <p>Loading...</p>
+        <h1>{header}</h1>
+        {loading ? <p>Loading...</p> : <p>Loading DONE</p>}
       </div>
     );
   }
 }
 
 function mapStateToProps(reduxState) {
-  return {};
+  console.log(reduxState);
+  return {
+    games: reduxState.games,
+    game: reduxState.gameDetails
+  };
 }
 
-export default connect(null)(DetailPage);
+// const mapDispatchToProps = dispatch => ({
+//   fetchOneGame: () => dispatch(fetchOneGame())
+// });
+
+export default connect(mapStateToProps, { fetchOneGame })(DetailPage);

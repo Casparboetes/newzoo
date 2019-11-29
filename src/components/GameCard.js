@@ -18,7 +18,7 @@ export default class GameCard extends Component {
   render() {
     return (
       <li className="game">
-        <Link to={`/streaming/${this.props.index}`}>
+        <Link to={`/games/${this.props.game}`}>
           <img
             className="game-image"
             src={`https://api-test.newzoo.com:443/v1.0/metadata/game/boxart?name=${this.props.game}`}
