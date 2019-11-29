@@ -1,0 +1,30 @@
+.nav-bar {
+  // position: fixed;
+  // top: 0;
+  z-index: 9998;
+  width: 100%;
+  background-color: #69cc84;
+
+  .container {
+    display: flex;
+    justify-content: flex-start;
+    justify-items: center;
+    flex-direction: row;
+    margin: 0 120px;
+    padding: 20px 0;
+    a.logo {
+      img {
+        width: 100%;
+        max-width: 72px;
+        height: auto;
+        display: block;
+      }
+    }
+    .nav-link {
+      padding: 1rem;
+    }
+    .search {
+      width: 200px;
+    }
+  }
+}

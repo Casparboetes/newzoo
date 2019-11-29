@@ -1,0 +1,18 @@
+ul > li {
+  display: inline-block;
+  /* You can also add some margins here to make it look prettier */
+  zoom: 0.75;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+span {
+  background-color: red;
+  color: white;
+  font-weight: bolder;
+  padding: 0.5rem;
+}

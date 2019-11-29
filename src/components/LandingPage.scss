@@ -1,0 +1,48 @@
+.LandingPage {
+  background-color: #69cc84;
+  min-height: 100vh;
+  padding-top: 6%;
+
+  .profile-gate-label {
+    width: 100%;
+    color: #fff;
+    font-size: 4vw;
+  }
+  ul > li {
+    display: inline-block;
+    /* You can also add some margins here to make it look prettier */
+    zoom: 0.5;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    line-height: 1.2;
+    user-select: none;
+    cursor: default;
+    font-size: 0.75vw;
+    text-align: center;
+    -webkit-box-direction: normal;
+    padding: 0;
+    margin: 0 1rem;
+  }
+  .choose-interest {
+    .nav-link {
+      .profile-image {
+        width: 65%;
+        height: auto;
+      }
+    }
+
+    .interest {
+      padding: 1rem;
+      color: #333;
+      font-size: 4rem;
+    }
+    :hover {
+      .interest {
+        transition: color 200ms ease-out;
+        color: #fff;
+      }
+    }
+  }
+}

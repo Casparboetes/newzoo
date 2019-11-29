@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+import LandingPage from "./components/LandingPage";
+import GameTop50List from "./components/GameTop50List";
+import GamePCList from "./components/GamePCList";
+import NavBar from "./components/NavBar";
+import DetailPage from "./components/DetailPage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "./App.scss";
+
+export default class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <NavBar />
+        <Switch>
+          <Route path="/streaming" component={GameTop50List} />
+          <Route path="/streaming/:id" component={DetailPage} />
+          <Route path="/pc-games" component={GamePCList} />
+          <Route path="/pc-games/:id" component={DetailPage} />
+          <Route exact path="/" component={LandingPage} />
+        </Switch>
+      </div>
+    );
+  }
 }
-
-export default App;
