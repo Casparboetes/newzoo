@@ -23,6 +23,7 @@ class NavBar extends React.Component {
               alt="Newzoo Logo"
             ></img>
           </a>
+          <Link to={"/streaming"}> Home </Link>
         </div>
       </nav>
     );

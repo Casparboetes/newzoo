@@ -10,13 +10,9 @@ class GameTop50List extends Component {
     this.props.dispatch(fetchGamesViewershipTop50);
   }
 
-  handleClick = () => {
-    let i =
-      this.props.game.index < this.props.game.test.length
-        ? (this.props.game.index += 1)
-        : 0;
-    this.setState({ index: i });
-  };
+  rotateRight = array => array.unshift(array.pop());
+
+  rotateLeft = array => array.push(array.shift());
 
   render() {
     const loading = !this.props.games;
@@ -31,7 +27,19 @@ class GameTop50List extends Component {
             <p>
               We have top <span>{this.props.games.length}</span> streamed games!
             </p>
-            <button onClick={this.handleClick}>Click</button>
+            <button
+              onClick={() =>
+                this.props.dispatch({ type: "games/ROTATE_RIGHT" })
+              }
+            >
+              &#10094; &#10094; Previous
+            </button>
+
+            <button
+              onClick={() => this.props.dispatch({ type: "games/ROTATE_LEFT" })}
+            >
+              Next &#10095; &#10095;
+            </button>
             <ul>
               {this.props.games.map((game, index) => (
                 <GameCard
