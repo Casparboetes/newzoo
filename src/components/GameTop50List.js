@@ -1,4 +1,4 @@
-import React, { Component, State } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchGamesViewershipTop50 } from "../store/games/actions";
 import GameCard from "./GameCard.js";
