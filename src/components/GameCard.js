@@ -16,22 +16,31 @@ export default class GameCard extends Component {
   };
 
   render() {
+    const {
+      game,
+      genre,
+      hoursViewed,
+      currentRank,
+      publisher,
+      previousRank
+    } = this.props;
+
     return (
       <li className="game">
-        <Link to={`/games/${this.props.game}`}>
+        <Link to={`/games/${game}`}>
           <img
             className="game-image"
-            src={`https://api-test.newzoo.com:443/v1.0/metadata/game/boxart?name=${this.props.game}`}
-            alt={`cover ${this.props.game}`}
+            src={`https://api-test.newzoo.com:443/v1.0/metadata/game/boxart?name=${game}`}
+            alt={`cover ${game}`}
           ></img>
-          <div className="center-left">{this.props.game}</div>
-          <div className="lowest-bottom-left">{this.props.genre}</div>
-          {/* <div className="publisher">{this.props.publisher}</div> */}
-          <div className="medium-bottom-left">{this.props.hoursViewed}</div>
+          <div className="center-left">{game}</div>
+          <div className="lowest-bottom-left">{genre}</div>
+          <div className="publisher">{publisher}</div>
+          <div className="medium-bottom-left">{hoursViewed}</div>
           <div className="top-right" style={{ fontSize: "1.2rem" }}>
-            {this.props.currentRank}
+            {currentRank}
           </div>
-          {/* <div className="previousRank">{this.props.previousRank}</div> */}
+          <div className="previousRank">{previousRank}</div>
         </Link>
       </li>
     );
