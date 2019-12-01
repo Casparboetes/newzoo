@@ -15,9 +15,8 @@ export default class App extends React.Component {
         <NavBar />
         <Switch>
           <Route path="/streaming" component={GameTop50List} />
-          <Route path="/games/:gameTitle" component={DetailPage} />
           <Route path="/pc-games" component={GamePCList} />
-          {/* <Route path="/pc-games/:id" component={DetailPage} /> */}
+          <Route path="/games/:gameTitle" component={DetailPage} />
           <Route exact path="/" component={LandingPage} />
         </Switch>
       </div>

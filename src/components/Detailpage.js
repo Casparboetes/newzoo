@@ -1,20 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { fetchOneGame } from "../store/detailpage/actions";
+import { fetchOneGame } from "../store/detailPage/actions";
 import "./DetailPage.scss";
 
 class DetailPage extends Component {
-  static propTypes = {
-    // name: PropTypes.string.isRequired
-    // genre: PropTypes.string.isRequired,
-    // publisher: PropTypes.string.isRequired,
-    // hoursViewed: PropTypes.number.isRequired,
-    // currentRank: PropTypes.number.isRequired,
-    // previousRank: PropTypes.number.isRequired,
-    // index: PropTypes.string
-  };
-
   componentDidMount() {
     const { gameTitle } = this.props.match.params;
     this.props.fetchOneGame(gameTitle);
@@ -32,7 +21,6 @@ class DetailPage extends Component {
             <div className="container">
               <h1 className="game-title">{this.props.gameDetails[0].name}</h1>
               <div className="game-rankings">
-                {/* <h4>Ranking per Streaming service</h4> */}
                 <ul>
                   {this.props.gameDetails[0].rank_fields.map((field, index) => (
                     <li key={index}>
@@ -86,15 +74,9 @@ class DetailPage extends Component {
   }
 }
 
-function mapStateToProps(reduxState) {
-  return {
-    games: reduxState.games,
-    gameDetails: reduxState.gameDetails
-  };
-}
-
-// const mapDispatchToProps = dispatch => ({
-//   fetchOneGame: () => dispatch(fetchOneGame())
-// });
+const mapStateToProps = reduxState => ({
+  games: reduxState.games,
+  gameDetails: reduxState.gameDetails
+});
 
 export default connect(mapStateToProps, { fetchOneGame })(DetailPage);
