@@ -1,44 +1,55 @@
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
-// import { fetchGamesViewershipTop50 } from "../store/games/actions";
+import { fetchPcPlayerUsageTop50 } from "../store/pc/actions";
 import GameCard from "./GameCard.js";
 import "./GameTop50List.scss";
 
-// The "unconnected" inner component:
-class GamePCList extends React.Component {
+class GameTop50List extends Component {
   componentDidMount() {
-    // dispatch the "thunk" (function) itself
-    // this.props.dispatch(fetchGamesViewershipTop50);
+    if (this.props.pcGames === null) {
+      this.props.dispatch(fetchPcPlayerUsageTop50);
+    }
   }
 
   render() {
-    const loading = !this.props.games;
+    const loading = !this.props.pcGames;
 
     return (
-      <div>
+      <div className="game-list">
         <h1>Newzoo Top PC Games</h1>
         {loading ? (
           <p>Loading...</p>
         ) : (
           <div>
             <p>
-              We have top <span>{this.props.games.length}</span> streamed games!
+              Our top <span>{this.props.pcGames.length}</span> pc games!
             </p>
-            <div className="card-holder">
-              <ul>
-                {this.props.games.map((game, index) => (
+
+            <ul>
+              {this.props.pcGames
+                .map((pcGame, index) => (
                   <GameCard
-                    game={game.game}
-                    genre={game.genre}
-                    publisher={game.publisher}
-                    hoursViewed={game.hours_viewed}
-                    currentRank={game.current_rank}
-                    previousRank={game.previous_rank}
+                    game={pcGame.title}
+                    currentRank={pcGame.rank}
                     key={index}
                   />
-                ))}
-              </ul>
-            </div>
+                ))
+                .slice(0, 7)}
+            </ul>
+
+            <button
+              className="button"
+              onClick={() => this.props.dispatch({ type: "pc/ROTATE_RIGHT" })}
+            >
+              &#10094; &#10094;
+            </button>
+
+            <button
+              className="button"
+              onClick={() => this.props.dispatch({ type: "pc/ROTATE_LEFT" })}
+            >
+              &#10095; &#10095;
+            </button>
           </div>
         )}
       </div>
@@ -46,12 +57,6 @@ class GamePCList extends React.Component {
   }
 }
 
-// const mapStateToProps = reduxState => ({ games: reduxState.games });
+const mapStateToProps = reduxState => ({ pcGames: reduxState.pcGames });
 
-// function mapStateToProps(reduxState) {
-//   console.log(reduxState);
-//   return {
-//     games: reduxState.games
-//   };
-// }
-export default connect(null)(GamePCList);
+export default connect(mapStateToProps)(GameTop50List);

@@ -17,14 +17,17 @@ class NavBar extends React.Component {
               alt="Newzoo Logo"
             ></img>
           </Link>
-          <Link to={"/streaming"}> Streaming </Link>
-          <Link to={"/streaming"}> Streaming </Link>
         </div>
       </nav>
     );
   }
 }
 
-// const mapStateToProps = reduxState => ({ games: reduxState.games });
+function mapStateToProps(reduxState) {
+  return {
+    games: reduxState.games,
+    gameDetails: reduxState.gameDetails
+  };
+}
 
-export default connect(null)(NavBar);
+export default connect(mapStateToProps)(NavBar);

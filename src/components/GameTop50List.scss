@@ -1,7 +1,6 @@
 .game-list {
   ul > li {
     display: inline-block;
-    /* You can also add some margins here to make it look prettier */
     zoom: 0.75;
     opacity: 0.9;
   }
@@ -21,5 +20,17 @@
     color: white;
     font-weight: bolder;
     padding: 0.5rem;
+  }
+
+  .button {
+    display: inline-block;
+    background: #161699;
+    padding: 16px 30px;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    outline: none;
+    text-align: center;
   }
 }

@@ -1,6 +1,6 @@
 import newzoo from "../../api/newzoo";
 import secrets from "../../secrets.js";
-import axios from "axios";
+import axios from "./node_modules/axios";
 
 // export function fetchOneGame(value) {
 //   return function(dispatch, getState) {

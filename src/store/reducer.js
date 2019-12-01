@@ -1,10 +1,11 @@
 // src/store/reducer.js
 import { combineReducers } from "redux";
 import gamesReducer from "./games/reducer";
-import detailPageReducer from "./detailpage/reducer";
+import pcReducer from "./pc/reducer";
+import detailPageReducer from "./detailPage/reducer";
 
 export default combineReducers({
   games: gamesReducer,
+  pcGames: pcReducer,
   gameDetails: detailPageReducer
-  // we can add more "slice" subreducers here later on...
 });
