@@ -55,7 +55,7 @@ class GameTop50List extends Component {
                     key={index}
                   />
                 ))
-                .slice(0, 7)}
+                .slice(0, 50)}
             </ul>
           </div>
         )}
@@ -66,10 +66,4 @@ class GameTop50List extends Component {
 
 const mapStateToProps = reduxState => ({ games: reduxState.games });
 
-// function mapStateToProps(reduxState) {
-//   console.log(reduxState);
-//   return {
-//     games: reduxState.games
-//   };
-// }
 export default connect(mapStateToProps)(GameTop50List);

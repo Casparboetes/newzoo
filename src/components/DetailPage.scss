@@ -1,0 +1,57 @@
+.detail-page {
+  background-color: #f7f7f7;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.26);
+  padding: 2rem;
+  margin: 2rem 7.5rem;
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .game-title {
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: left;
+    }
+    .game-rankings {
+      margin: 2rem 0;
+    }
+  }
+
+  .game-overview {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    color: #333;
+
+    .game-data {
+      min-width: 17rem;
+      margin-left: 2rem;
+      padding: 0 1rem;
+      background-color: #f7f7f7;
+
+      text-align: left;
+      font-weight: 700;
+      margin-top: 0;
+      color: inherit;
+      font-weight: inherit;
+      line-height: 1.2;
+
+      h4 {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  .read-more {
+    margin-top: 1rem;
+    text-align: left;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .border {
+    border-radius: 3px;
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.26);
+  }
+}
