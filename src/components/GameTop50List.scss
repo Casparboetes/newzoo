@@ -1,4 +1,10 @@
 .game-list {
+  h1 {
+    margin-bottom: 3rem;
+  }
+  p {
+    margin-bottom: 1.5rem;
+  }
   ul > li {
     display: inline-block;
     zoom: 0.75;
@@ -23,6 +29,8 @@
   }
 
   .button {
+    margin-top: 1rem;
+    width: 280px;
     display: inline-block;
     background: #161699;
     padding: 16px 30px;
@@ -32,5 +40,9 @@
     font-weight: 500;
     outline: none;
     text-align: center;
+    cursor: pointer;
+    &:hover {
+      background: lighten(#161699, 10%);
+    }
   }
 }
