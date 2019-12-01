@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchPcPlayerUsageTop50 } from "../store/pc/actions";
 import GameCard from "./GameCard.js";
-import "./GameTop50List.scss";
+import "./List.scss";
 
 class GameTop50List extends Component {
   componentDidMount() {

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchGamesViewershipTop50 } from "../store/games/actions";
 import GameCard from "./GameCard.js";
-import "./GameTop50List.scss";
+import "./List.scss";
 
 class GameTop50List extends Component {
   componentDidMount() {
@@ -29,7 +29,6 @@ class GameTop50List extends Component {
                 .map((game, index) => (
                   <GameCard
                     game={game.game}
-                    hoursViewed={game.hours_viewed}
                     currentRank={game.current_rank}
                     key={index}
                   />
