@@ -15,7 +15,7 @@ class LandingPage extends Component {
             <Link className="nav-link" to={"/pc-games"}>
               <img className="profile-image pc" src={pc} alt="PC-logo"></img>
             </Link>
-            <div className="interest ">PC Games</div>
+            <div className="interest ">Games</div>
           </li>
           <li>
             <Link className="nav-link" to={"/streaming"}>
