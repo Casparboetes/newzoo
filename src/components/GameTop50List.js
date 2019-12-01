@@ -7,7 +7,9 @@ import "./GameTop50List.scss";
 class GameTop50List extends Component {
   componentDidMount() {
     // dispatch "thunk" (function)
-    this.props.dispatch(fetchGamesViewershipTop50);
+    if (this.props.games === null) {
+      this.props.dispatch(fetchGamesViewershipTop50);
+    }
   }
 
   rotateRight = array => array.unshift(array.pop());
@@ -41,17 +43,19 @@ class GameTop50List extends Component {
               Next &#10095; &#10095;
             </button>
             <ul>
-              {this.props.games.map((game, index) => (
-                <GameCard
-                  game={game.game}
-                  genre={game.genre}
-                  publisher={game.publisher}
-                  hoursViewed={game.hours_viewed}
-                  currentRank={game.current_rank}
-                  previousRank={game.previous_rank}
-                  key={index}
-                />
-              ))}
+              {this.props.games
+                .map((game, index) => (
+                  <GameCard
+                    game={game.game}
+                    genre={game.genre}
+                    publisher={game.publisher}
+                    hoursViewed={game.hours_viewed}
+                    currentRank={game.current_rank}
+                    previousRank={game.previous_rank}
+                    key={index}
+                  />
+                ))
+                .slice(0, 7)}
             </ul>
           </div>
         )}
