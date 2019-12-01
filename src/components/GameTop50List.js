@@ -20,7 +20,7 @@ class GameTop50List extends Component {
     const loading = !this.props.games;
 
     return (
-      <div>
+      <div className="game-list">
         <h1>Newzoo Top Streamed Games</h1>
         {loading ? (
           <p>Loading...</p>

@@ -24,19 +24,21 @@ class GamePCList extends React.Component {
             <p>
               We have top <span>{this.props.games.length}</span> streamed games!
             </p>
-            <ul>
-              {this.props.games.map((game, index) => (
-                <GameCard
-                  game={game.game}
-                  genre={game.genre}
-                  publisher={game.publisher}
-                  hoursViewed={game.hours_viewed}
-                  currentRank={game.current_rank}
-                  previousRank={game.previous_rank}
-                  key={index}
-                />
-              ))}
-            </ul>
+            <div className="card-holder">
+              <ul>
+                {this.props.games.map((game, index) => (
+                  <GameCard
+                    game={game.game}
+                    genre={game.genre}
+                    publisher={game.publisher}
+                    hoursViewed={game.hours_viewed}
+                    currentRank={game.current_rank}
+                    previousRank={game.previous_rank}
+                    key={index}
+                  />
+                ))}
+              </ul>
+            </div>
           </div>
         )}
       </div>

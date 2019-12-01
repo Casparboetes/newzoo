@@ -9,21 +9,16 @@ class NavBar extends React.Component {
     return (
       <nav className="nav-bar">
         <div className="container">
-          <a
-            className="logo"
-            href="https://newzoo.com"
-            title="Newzoo"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link to={"/"} className="logo">
             <img
               src={
                 "https://newzoo.com/wp-content/themes/newzoo/images/newzoo-logo.svg"
               }
               alt="Newzoo Logo"
             ></img>
-          </a>
-          <Link to={"/streaming"}> Home </Link>
+          </Link>
+          <Link to={"/streaming"}> Streaming </Link>
+          <Link to={"/streaming"}> Streaming </Link>
         </div>
       </nav>
     );

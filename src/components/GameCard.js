@@ -36,10 +36,10 @@ export default class GameCard extends Component {
           {/* <div className="center-left">{game}</div> */}
           {/* <div className="lowest-bottom-left">{genre}</div> */}
           {/* <div className="publisher">{publisher}</div> */}
-          <div className="medium-bottom-left">{hoursViewed}</div>
           <div className="top-right" style={{ fontSize: "1.2rem" }}>
             {currentRank}
           </div>
+          {/* <div className="medium-bottom-left">{hoursViewed}</div> */}
           {/* <div className="previousRank">{previousRank}</div> */}
         </Link>
       </li>
