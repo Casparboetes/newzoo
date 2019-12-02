@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchPcPlayerUsageTop50 } from "../store/pc/actions";
-import GameCard from "./GameCard.js";
+import { fetchPcPlayerUsageTop50 } from "../../store/pc/actions";
+import GameCard from "../../components/GameCard.js";
 import "./List.scss";
 
-class GameTop50List extends Component {
+class PcGames extends Component {
   componentDidMount() {
     if (this.props.pcGames === null) {
       this.props.dispatch(fetchPcPlayerUsageTop50);
@@ -59,4 +59,4 @@ class GameTop50List extends Component {
 
 const mapStateToProps = reduxState => ({ pcGames: reduxState.pcGames });
 
-export default connect(mapStateToProps)(GameTop50List);
+export default connect(mapStateToProps)(PcGames);

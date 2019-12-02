@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchOneGame } from "../store/detailPage/actions";
+import { fetchOneGame } from "../../store/detail-page/actions";
 import "./DetailPage.scss";
 
 class DetailPage extends Component {

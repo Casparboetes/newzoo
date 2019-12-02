@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchGamesViewershipTop50 } from "../store/games/actions";
-import GameCard from "./GameCard.js";
+import { fetchGamesViewershipTop50 } from "../../store/games/actions";
+import GameCard from "../../components/GameCard.js";
+
 import "./List.scss";
 
-class GameTop50List extends Component {
+class StreamedGames extends Component {
   componentDidMount() {
     if (this.props.games === null) {
       this.props.dispatch(fetchGamesViewershipTop50);
@@ -22,7 +23,7 @@ class GameTop50List extends Component {
         ) : (
           <div>
             <p>
-              We have top <span>{this.props.games.length}</span> streamed games!
+              Our top <span>{this.props.games.length}</span> streamed games!
             </p>
             <ul>
               {this.props.games
@@ -44,4 +45,4 @@ class GameTop50List extends Component {
 
 const mapStateToProps = reduxState => ({ games: reduxState.games });
 
-export default connect(mapStateToProps)(GameTop50List);
+export default connect(mapStateToProps)(StreamedGames);

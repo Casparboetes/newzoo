@@ -1,10 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import LandingPage from "./components/LandingPage";
-import GameTop50List from "./components/GameTop50List";
-import GamePCList from "./components/GamePCList";
 import NavBar from "./components/NavBar";
-import DetailPage from "./components/DetailPage";
+import { LandingPage, StreamedGames, PcGames, DetailPage } from "./views";
 
 import "./App.scss";
 
@@ -14,8 +11,8 @@ export default class App extends React.Component {
       <div className="App">
         <NavBar />
         <Switch>
-          <Route path="/streaming" component={GameTop50List} />
-          <Route path="/pc-games" component={GamePCList} />
+          <Route path="/streaming" component={StreamedGames} />
+          <Route path="/pc-games" component={PcGames} />
           <Route path="/games/:gameTitle" component={DetailPage} />
           <Route exact path="/" component={LandingPage} />
         </Switch>

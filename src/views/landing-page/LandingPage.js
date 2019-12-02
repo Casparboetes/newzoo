@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import pc from "../assets/pc.png";
-import stream from "../assets/stream.png";
+import pc from "../../assets/pc.png";
+import stream from "../../assets/stream.png";
 
 import "./LandingPage.scss";
 
