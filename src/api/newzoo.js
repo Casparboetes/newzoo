@@ -14,7 +14,7 @@ const api = (endpoint, { method, data, jwt } = {}) => {
       return data;
     })
     .catch(error => {
-      return console.log("oopsie, error");
+      return console.log("Oopsie, an error: ", error);
     });
 };
 
