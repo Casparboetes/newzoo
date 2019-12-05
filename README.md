@@ -1,5 +1,17 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## secrets.js
+
+To make the api call add the a secret.js in your root.
+
+```
+const secret = {
+  jwt: "INSERT KEY YOUR KEY HERE"
+};
+
+export default secret;
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
