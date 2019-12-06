@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## secrets.js
 
-To make the api call add the a secret.js in your root.
+To make the api call add the following secret.js to your root.
 
 ```
 const secret = {
