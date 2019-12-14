@@ -1,21 +1,21 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { fetchPcPlayerUsageTop50 } from "../../store/pc/actions";
-import GameCard from "../../components/GameCard.js";
-import "./List.scss";
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { fetchPcPlayerUsageTop50 } from '../../store/pc/actions'
+import GameCard from '../../components/GameCard.js'
+import './List.scss'
 
 class PcGames extends Component {
   componentDidMount() {
     if (this.props.pcGames === null) {
-      this.props.dispatch(fetchPcPlayerUsageTop50);
+      this.props.dispatch(fetchPcPlayerUsageTop50)
     }
   }
 
   render() {
-    const loading = !this.props.pcGames;
+    const loading = !this.props.pcGames
 
     return (
-      <div className="game-list">
+      <div className='game-list'>
         <h1>Newzoo Top PC Games</h1>
         {loading ? (
           <p>Loading...</p>
@@ -38,25 +38,25 @@ class PcGames extends Component {
             </ul>
 
             <button
-              className="button"
-              onClick={() => this.props.dispatch({ type: "pc/ROTATE_RIGHT" })}
+              className='button'
+              onClick={() => this.props.dispatch({ type: 'pc/ROTATE_RIGHT' })}
             >
               &#10094; &#10094;
             </button>
 
             <button
-              className="button"
-              onClick={() => this.props.dispatch({ type: "pc/ROTATE_LEFT" })}
+              className='button'
+              onClick={() => this.props.dispatch({ type: 'pc/ROTATE_LEFT' })}
             >
               &#10095; &#10095;
             </button>
           </div>
         )}
       </div>
-    );
+    )
   }
 }
 
-const mapStateToProps = reduxState => ({ pcGames: reduxState.pcGames });
+const mapStateToProps = reduxState => ({ pcGames: reduxState.pcGames })
 
-export default connect(mapStateToProps)(PcGames);
+export default connect(mapStateToProps)(PcGames)

@@ -1,22 +1,22 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { fetchGamesViewershipTop50 } from "../../store/games/actions";
-import GameCard from "../../components/GameCard.js";
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { fetchGamesViewershipTop50 } from '../../store/games/actions'
+import GameCard from '../../components/GameCard.js'
 
-import "./List.scss";
+import './List.scss'
 
 class StreamedGames extends Component {
   componentDidMount() {
     if (this.props.games === null) {
-      this.props.dispatch(fetchGamesViewershipTop50);
+      this.props.dispatch(fetchGamesViewershipTop50)
     }
   }
 
   render() {
-    const loading = !this.props.games;
+    const loading = !this.props.games
 
     return (
-      <div className="game-list">
+      <div className='game-list'>
         <h1>Newzoo Top Streamed Games</h1>
         {loading ? (
           <p>Loading...</p>
@@ -39,10 +39,10 @@ class StreamedGames extends Component {
           </div>
         )}
       </div>
-    );
+    )
   }
 }
 
-const mapStateToProps = reduxState => ({ games: reduxState.games });
+const mapStateToProps = reduxState => ({ games: reduxState.games })
 
-export default connect(mapStateToProps)(StreamedGames);
+export default connect(mapStateToProps)(StreamedGames)
